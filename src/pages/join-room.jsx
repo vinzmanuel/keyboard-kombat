@@ -1,4 +1,3 @@
-/*
 // src/pages/JoinRoom.jsx
 
 import { useState } from "react"
@@ -7,7 +6,7 @@ import { ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { initializeSocket } from "@/lib/socket"
+// import { initializeSocket } from "@/lib/socket"
 
 export default function JoinRoom() {
     const navigate = useNavigate()
@@ -17,31 +16,35 @@ export default function JoinRoom() {
 
     const handleJoinRoom = async () => {
         if (!roomCode || roomCode.length !== 6) {
-        setError("Please enter a valid 6-character room code")
-        return
+            setError("Please enter a valid 6-character room code")
+            return
         }
 
-        setIsJoining(true)
-        setError("")
+    setIsJoining(true)
+    setError("")
 
-        try {
-        const socket = await initializeSocket()
+    try {
+      // const socket = await initializeSocket()
 
-        socket.emit("join_room", { roomCode })
+      // socket.emit("join_room", { roomCode })
 
-        socket.on("room_joined", () => {
-            navigate(`/game/${roomCode}`)
-        })
+      // socket.on("room_joined", () => {
+      //   navigate(`/game/${roomCode}`)
+      // })
 
-        socket.on("room_not_found", () => {
-            setError("Room not found. Please check the code and try again.")
-            setIsJoining(false)
-        })
+      // socket.on("room_not_found", () => {
+      //   setError("Room not found. Please check the code and try again.")
+      //   setIsJoining(false)
+      // })
 
-        socket.on("room_full", () => {
-            setError("This room is already full.")
-            setIsJoining(false)
-        })
+      // socket.on("room_full", () => {
+      //   setError("This room is already full.")
+      //   setIsJoining(false)
+      // })
+
+      // For testing without socket:
+    //navigate(`/game/${roomCode}`)
+    navigate('/TypingTest')
         } catch (error) {
         console.error("Failed to join room:", error)
         setError("Failed to connect. Please try again.")
@@ -80,7 +83,7 @@ export default function JoinRoom() {
                 Back
             </Button>
             <Button
-                className="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600"
+                className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700"
                 onClick={handleJoinRoom}
                 disabled={isJoining}
             >
@@ -91,6 +94,3 @@ export default function JoinRoom() {
         </div>
     )
 }
-
-/
-*/

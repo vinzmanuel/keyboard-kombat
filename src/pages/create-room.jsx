@@ -1,13 +1,12 @@
-/*
 // src/pages/CreateRoom.jsx
 
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { Copy, ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle,} from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { generateRoomCode } from "@/lib/utils"
-import { initializeSocket } from "@/lib/socket"
+// import { initializeSocket } from "@/lib/socket"
 
 export default function CreateRoom() {
     const navigate = useNavigate()
@@ -23,13 +22,16 @@ export default function CreateRoom() {
         setIsCreating(true)
 
         try {
-        const socket = await initializeSocket()
+        // const socket = await initializeSocket()
 
-        socket.emit("create_room", { roomCode })
+        // socket.emit("create_room", { roomCode })
 
-        socket.on("room_created", () => {
-            navigate(`/game/${roomCode}`)
-        })
+        // socket.on("room_created", () => {
+        //   navigate(`/game/${roomCode}`)
+        // })
+
+        // For testing without socket:
+        navigate(`/game/${roomCode}`)
         } catch (error) {
         console.error("Failed to create room:", error)
         setIsCreating(false)
@@ -75,7 +77,7 @@ export default function CreateRoom() {
                 Back
             </Button>
             <Button
-                className="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600"
+                className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700"
                 onClick={handleCreateRoom}
                 disabled={isCreating}
             >
@@ -86,4 +88,3 @@ export default function CreateRoom() {
         </div>
     )
 }
-*/

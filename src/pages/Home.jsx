@@ -16,7 +16,7 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <Link to="/CreateRoom">
-                <Button size="lg" className="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white">
+                <Button size="lg" className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white">
                 Create Room
                 <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -26,7 +26,7 @@ export default function Home() {
                 <Button
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto border-emerald-500 text-emerald-500 hover:bg-emerald-950 hover:text-white"
+                className="w-full sm:w-auto border-emerald-500 text-emerald-600 hover:bg-emerald-950 hover:text-white"
                 >
                 Join Room
                 </Button>
