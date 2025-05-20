@@ -407,6 +407,41 @@ app.prepare().then(() => {
       }
     });
 
+    // Give up event
+    socket.on('giveUp', ({ roomCode }) => {
+      if (!roomCode || !rooms[roomCode]) return;
+      const room = rooms[roomCode];
+      if (!room.gameStarted || room.gameFinished) return;
+      // Find the player who gave up
+      const playerIndex = room.players.findIndex(p => p.id === socket.id);
+      if (playerIndex === -1) return;
+      // Mark game as finished
+      room.gameFinished = true;
+      // Set health to 0 for quitter, 100 for opponent
+      room.players[playerIndex].health = 0;
+      // Find opponent
+      const opponent = room.players.find((p, idx) => idx !== playerIndex && !p.inactive);
+      let winnerId = null;
+      if (opponent) {
+        opponent.health = 100;
+        winnerId = opponent.id;
+        // Notify opponent of win by forfeit (legacy event for compatibility)
+        io.to(opponent.id).emit('playerGaveUp');
+      }
+      // Emit gameOver to both players with forfeit flag
+      io.to(roomCode).emit('gameOver', {
+        winner: winnerId,
+        players: room.players,
+        forfeit: true,
+        quitter: socket.id
+      });
+      // Clean up room after a short delay
+      setTimeout(() => {
+        delete rooms[roomCode];
+        activeCountdowns.delete(roomCode);
+      }, 10000);
+    });
+
     // Leave room
     socket.on('leaveRoom', ({ roomCode }) => {
       if (rooms[roomCode]) {

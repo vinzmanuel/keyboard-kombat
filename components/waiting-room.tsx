@@ -212,7 +212,11 @@ export default function WaitingRoom({ roomCode, textType, language = "JavaScript
             >
               <ArrowLeft size={20} className="mr-2" /> CANCEL
             </RetroButton>
-            <RetroTitle size="md">WAITING ROOM</RetroTitle>
+            <img
+              src="/WAITING_ROOM.png"
+              alt="KEYBOARD KOMBAT"
+              className=" h-[80px] -mb-5 -mt-5 -ml-4 object-contain drop-shadow-[0_3px_3px_rgba(0,0,255,0.8)]"
+            />
           </div>
         </div>
         <div className="flex flex-col items-center justify-center py-16">

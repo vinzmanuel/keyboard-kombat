@@ -105,7 +105,11 @@ export default function MultiplayerCreate() {
             <RetroButton onClick={() => router.push("/")} color="blue" size="md" className="mr-4">
               <ArrowLeft size={20} className="mr-2" /> BACK
             </RetroButton>
-            <RetroTitle size="md">CREATE BATTLE</RetroTitle>
+            <img
+              src="/CREATE_BATTLE.png"
+              alt="KEYBOARD KOMBAT"
+              className=" h-[80px] -mb-5 -mt-5 -ml-4 object-contain drop-shadow-[0_3px_3px_rgba(0,0,255,0.8)]"
+            />
           </div>
         </div>
 

@@ -8,6 +8,7 @@ import HealthBar from "./ui/health-bar"
 import RetroButton from "./ui/retro-button"
 import RetroContainer from "./ui/retro-container"
 import RetroTitle from "./ui/retro-title"
+import Modal from "./modal"
 import { useMultiplayer } from "@/hooks/use-multiplayer"
 import { useSocket, initSocket } from "../lib/socket"
 
@@ -29,10 +30,31 @@ export default function BattleScreen({ roomCode, textType, language = "JavaScrip
   const [socketConnected, setSocketConnected] = useState(false)
   const [loadRetries, setLoadRetries] = useState(0)
   const [roomError, setRoomError] = useState<string | null>(null)
+  const [showGiveUpModal, setShowGiveUpModal] = useState(false)
+  const [opponentGaveUp, setOpponentGaveUp] = useState(false)
   const loadTimerRef = useRef<NodeJS.Timeout | null>(null)
 
   // Get socket directly
   const socket = useSocket() || initSocket()
+
+  // On mount, override the background video to kkburn_2_2.mp4
+  useEffect(() => {
+    // Find the background video element in layout
+    const video = document.querySelector('video[autoplay][loop][muted][playsinline]');
+    if (video && video instanceof HTMLVideoElement) {
+      video.src = '/kkburn_2_2.mp4';
+      video.load();
+      video.play().catch(() => {});
+    }
+    // On unmount, restore to default background
+    return () => {
+      if (video && video instanceof HTMLVideoElement) {
+        video.src = '/KKBG_2_2_2.mp4';
+        video.load();
+        video.play().catch(() => {});
+      }
+    };
+  }, []);
 
   // Track when socket connects/disconnects
   useEffect(() => {
@@ -297,12 +319,31 @@ export default function BattleScreen({ roomCode, textType, language = "JavaScrip
         loadTimerRef.current = null;
       }
     };
-    
-    // Register socket event listeners
+
+    // Listen for opponent giving up (legacy event)
+    const onPlayerGaveUp = () => {
+      setOpponentGaveUp(true);
+      setBattleEnded(true);
+    };
+
+    // Listen for gameOver with forfeit
+    const onGameOver = (data: any) => {
+      if (data && data.forfeit) {
+        if (data.winner && data.winner === socket.id) {
+          setOpponentGaveUp(true);
+          setBattleEnded(true);
+        } else if (data.winner && data.winner !== socket.id) {
+          setBattleEnded(true);
+        }
+      }
+    };
+
     socket.on('syncCountdown', onSyncCountdown);
     socket.on('battleStart', onBattleStart);
     socket.on('gameStatusResponse', onGameStatusResponse);
     socket.on('roomError', onRoomError);
+    socket.on('playerGaveUp', onPlayerGaveUp);
+    socket.on('gameOver', onGameOver);
 
     // Request game status when component mounts
     const storedSocketId = localStorage.getItem(`playerSocketId_${roomCode}`);
@@ -320,6 +361,8 @@ export default function BattleScreen({ roomCode, textType, language = "JavaScrip
       socket.off('battleStart', onBattleStart);
       socket.off('gameStatusResponse', onGameStatusResponse);
       socket.off('roomError', onRoomError);
+      socket.off('playerGaveUp', onPlayerGaveUp);
+      socket.off('gameOver', onGameOver);
     };
   }, [socket, roomCode, battleStarted]);
 
@@ -517,11 +560,24 @@ export default function BattleScreen({ roomCode, textType, language = "JavaScrip
     return `${prefix}${suffix}`;
   }
 
+  // Give up handler
+  const handleGiveUp = () => {
+    setShowGiveUpModal(true);
+  };
+
+  const confirmGiveUp = () => {
+    if (socket && roomCode) {
+      socket.emit('giveUp', { roomCode });
+    }
+    setShowGiveUpModal(false);
+    router.push("/");
+  };
+
   // If there's a room error, show it
   if (roomError) {
     return (
       <div className="min-h-screen text-white p-4 flex items-center justify-center">
-        <RetroContainer className="w-full max-w-7xl">
+        <RetroContainer className="w-full max-w-7xl border-red-900 border-4">
           <div className="text-center">
             <div className="text-3xl font-bold text-red-500 mb-4">BATTLE ERROR</div>
             <div className="text-xl text-white mb-6">{roomError}</div>
@@ -576,7 +632,7 @@ export default function BattleScreen({ roomCode, textType, language = "JavaScrip
     console.log("Waiting for game text to load...");
     return (
       <div className="min-h-screen  text-white p-4 flex items-center justify-center">
-        <RetroContainer className="w-full max-w-7xl">
+        <RetroContainer className="w-full max-w-7xl border-red-500 border-4">
           <div className="text-center">
             <div className="text-3xl font-bold text-yellow-400 mb-4">LOADING BATTLE...</div>
             <div className="text-xl text-gray-400">Preparing your typing challenge</div>
@@ -593,10 +649,24 @@ export default function BattleScreen({ roomCode, textType, language = "JavaScrip
 
   return (
     <div className="min-h-screen  text-white p-4 flex items-center justify-center">
-      <RetroContainer className="w-full max-w-7xl">
+      <RetroContainer className="w-full max-w-7xl border-red-800 shadow-[0_0_30px_rgba(255,0,0,0.5)] rounded-lg p-8 border-4">
         <div className="flex justify-between items-center mb-6">
-          <RetroTitle size="md">KEYBOARD KOMBAT</RetroTitle>
-          <div className="text-yellow-400 font-bold text-xl">ROOM: {roomCode}</div>
+          <img
+            src="/kk-fire2.png"
+            alt="KEYBOARD KOMBAT"
+            className=" h-[80px] -mb-5 -mt-5 object-contain drop-shadow-[0_3px_3px_rgba(255,0,0,0.8)]"
+          />
+          {/* GIVE UP BUTTON */}
+          <div className="flex flex-col items-end">
+            <button
+              onClick={handleGiveUp}
+              className="mb-2 px-6 py-2 bg-red-700 hover:bg-red-900 text-white font-bold rounded-lg border-2 border-red-400 shadow-lg transition-all duration-150 text-lg"
+              disabled={battleEnded || !battleStarted}
+            >
+              GIVE UP
+            </button>
+            <div className="text-red-500 font-bold text-3xl">ROOM: {roomCode}</div>
+          </div>
         </div>
 
         {/* Stats display - Single location for WPM and accuracy */}
@@ -653,7 +723,9 @@ export default function BattleScreen({ roomCode, textType, language = "JavaScrip
               <div className="text-center">
                 <div className="text-6xl font-bold mb-6">
                   {winner === "player" ? (
-                    <span className="text-green-500">YOU WIN!</span>
+                    <span className="text-green-500">
+                      {opponentGaveUp ? "YOU WIN! (Victory by Forfeit)" : "YOU WIN!"}
+                    </span>
                   ) : (
                     <span className="text-red-500">YOU LOSE!</span>
                   )}
@@ -709,6 +781,30 @@ export default function BattleScreen({ roomCode, textType, language = "JavaScrip
                 </div>
               </div>
             </div>
+          )}
+
+          {/* Modal for Give Up Confirmation */}
+          {showGiveUpModal && (
+            <Modal isOpen={showGiveUpModal} onClose={() => setShowGiveUpModal(false)}>
+              <div className="p-8 bg-gray-900 border-4 border-red-700 rounded-lg text-center max-w-md mx-auto">
+                <div className="text-3xl font-bold text-red-400 mb-4">ABANDON MATCH?</div>
+                <div className="text-lg text-gray-200 mb-6">Are you sure you want to give up? Your opponent will win by forfeit.</div>
+                <div className="flex justify-center gap-6">
+                  <button
+                    onClick={confirmGiveUp}
+                    className="px-6 py-2 bg-red-700 hover:bg-red-900 text-white font-bold rounded-lg border-2 border-red-400 shadow-lg text-lg"
+                  >
+                    YES, GIVE UP
+                  </button>
+                  <button
+                    onClick={() => setShowGiveUpModal(false)}
+                    className="px-6 py-2 bg-gray-700 hover:bg-gray-800 text-white font-bold rounded-lg border-2 border-gray-400 shadow-lg text-lg"
+                  >
+                    CANCEL
+                  </button>
+                </div>
+              </div>
+            </Modal>
           )}
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -1045,7 +1141,7 @@ function MultiplierTypingArea({
   return (
     <div
       ref={containerRef}
-      className={`w-full rounded-lg border-4 border-gray-700 bg-gray-900 shadow-[0_0_20px_rgba(0,0,255,0.3)] ${
+      className={`w-full rounded-lg border-4 border-gray-700 bg-gray-900 shadow-[0_0_20px_rgba(255,0,0,0.3)] ${
         disabled || !inputEnabled ? "opacity-70" : ""
       }`}
     >

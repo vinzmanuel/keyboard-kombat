@@ -100,49 +100,63 @@ export default function MainMenu() {
 
   return (
     <div className="min-h-screen text-white p-4 flex items-center justify-center">
-      <RetroContainer className="w-full max-w-4xl">
-        <div className="text-center mb-10">
-          <RetroTitle>KEYBOARD KOMBAT</RetroTitle>
-          <div className="text-yellow-400 text-2xl mt-4 animate-pulse">PRESS START TO PLAY!</div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-          <RetroButton onClick={handleCreateRoom} color="red" size="lg" className="py-6">
-            <Swords className="mr-3" size={24} />
-            CREATE BATTLE
-          </RetroButton>
-
-          <RetroButton onClick={handleJoinRoom} color="blue" size="lg" className="py-6">
-            <Users className="mr-3" size={24} />
-            JOIN BATTLE
-          </RetroButton>
-
-          <RetroButton onClick={handlePracticeMode} color="green" size="lg" className="py-6">
-            <Gamepad2 className="mr-3" size={24} />
-            PRACTICE MODE
-          </RetroButton>
-
-          <RetroButton onClick={() => setShowingCredits(!showingCredits)} color="purple" size="lg" className="py-6">
-            <Trophy className="mr-3" size={24} />
-            {showingCredits ? "HIDE CREDITS" : "SHOW CREDITS"}
-          </RetroButton>
-        </div>
-
-        {showingCredits && (
-          <div className="border-4 border-purple-500 bg-purple-900 p-6 rounded-lg text-center animate-fadeIn mb-8">
-            <h3 className="text-2xl text-purple-300 mb-3">KEYBOARD KOMBAT</h3>
-            <p className="text-xl text-purple-200">A retro-styled typing battle game</p>
-            <p className="text-xl text-purple-200 mt-3">© 2025 LOV STUDIOS</p>
-            <p className="text-xl text-purple-200 mt-3">LIMOSNERO · OMBROSA · VALENZUELA</p>
-          </div>
-        )}
-
-        <div className="text-center mt-8 text-base text-gray-500">
-          <p>TYPE AS FAST AS POSSIBLE · DESTORY YOUR OPPONENTS</p>
-          <p className="mt-2">CLOSED BETA TEST 1.0.0</p>
-        </div>
-      </RetroContainer>
+  <RetroContainer className="w-full relative overflow-visible">
+    <div className="text-center mb-10 relative flex flex-col items-center">
+      {/* Overflowing logo image, adjusted to overflow more at the top */}
+      <div className="absolute left-1/2 -translate-x-1/2 -top-[125px] pointer-events-none select-none w-[980px] z-0" style={{ overflow: 'visible' }}>
+        <img
+          src="/KK-LOGO.png"
+          alt="KEYBOARD KOMBAT"
+          className="w-full h-auto drop-shadow-[0_4px_32px_rgba(0,0,255,0.4)]"
+          style={{
+            filter: 'drop-shadow(0 0 16px #3b82f6)',
+            userSelect: 'none',
+            paddingBottom: '12px', // Added padding-bottom to enhance overflow at bottom
+          }}
+          draggable="false"
+        />
+      </div>
+      {/* Adjusted spacer to match new layout */}
+      <div style={{ height: '56px' }} />
+      <div className="text-yellow-400 text-2xl mt-4 animate-pulse relative z-10">PRESS START TO PLAY!</div>
     </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+      <RetroButton onClick={handleCreateRoom} color="red" size="lg" className="py-6">
+        <Swords className="mr-3" size={24} />
+        CREATE BATTLE
+      </RetroButton>
+
+      <RetroButton onClick={handleJoinRoom} color="blue" size="lg" className="py-6">
+        <Users className="mr-3" size={24} />
+        JOIN BATTLE
+      </RetroButton>
+
+      <RetroButton onClick={handlePracticeMode} color="green" size="lg" className="py-6">
+        <Gamepad2 className="mr-3" size={24} />
+        PRACTICE MODE
+      </RetroButton>
+
+      <RetroButton onClick={() => setShowingCredits(!showingCredits)} color="purple" size="lg" className="py-6">
+        <Trophy className="mr-3" size={24} />
+        {showingCredits ? "HIDE CREDITS" : "SHOW CREDITS"}
+      </RetroButton>
+    </div>
+
+    {showingCredits && (
+      <div className="border-4 border-purple-500 bg-purple-900 p-6 rounded-lg text-center animate-fadeIn mb-8">
+        <h3 className="text-2xl text-purple-300 mb-3">KEYBOARD KOMBAT</h3>
+        <p className="text-xl text-purple-200">A retro-styled typing battle game</p>
+        <p className="text-xl text-purple-200 mt-3">© 2025 LOV STUDIOS</p>
+        <p className="text-xl text-purple-200 mt-3">LIMOSNERO · OMBROSA · VALENZUELA</p>
+      </div>
+    )}
+
+    <div className="text-center mt-8 text-base text-gray-500">
+      <p>TYPE AS FAST AS POSSIBLE · DESTROY YOUR OPPONENTS</p>
+      <p className="mt-2">CLOSED BETA TEST 1.0.0</p>
+    </div>
+  </RetroContainer>
+</div>
   )
 }
-4

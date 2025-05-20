@@ -34,28 +34,21 @@ export default function ResultsScreen({
   const router = useRouter()
 
   const handleRematch = () => {
-    // Generate a new room code for the rematch
     const rematchRoomCode = generateRematchCode();
-    
-    // Use the passed-in textType and language
     const roomTextType = textType || 'words';
     const roomLanguage = language || 'JavaScript';
     
-    // Store the rematch info in localStorage
     localStorage.setItem('rematch_info', JSON.stringify({
       originalRoomCode: roomCode,
       textType: roomTextType,
       language: roomLanguage,
-      initiator: true // Mark as initiator from results screen
+      initiator: true
     }));
     
-    // Navigate to rematch page
     router.push(`/multiplayer/rematch?roomCode=${rematchRoomCode}&type=${roomTextType}&language=${roomLanguage}`);
   }
   
-  // Generate a rematch code based on the original with a suffix
   function generateRematchCode() {
-    // Create a code that's related to the original but different
     const prefix = roomCode.substring(0, 4);
     const suffix = Math.random().toString(36).substring(2, 4).toUpperCase();
     return `${prefix}${suffix}`;
@@ -65,7 +58,6 @@ export default function ResultsScreen({
     router.push("/")
   }
 
-  // Determine the winner and loser styles
   const playerBoxStyle = winner === "player" 
     ? "border-green-500" 
     : "border-red-500";
@@ -98,6 +90,10 @@ export default function ResultsScreen({
     ? "text-green-400" 
     : "text-red-400";
 
+  // Convert damageDealt to integers
+  const playerDamageDealt = Math.floor(playerStats.damageDealt);
+  const opponentDamageDealt = Math.floor(opponentStats.damageDealt);
+
   return (
     <div className="min-h-screen text-white p-4 flex items-center justify-center">
       <RetroContainer className="w-full max-w-6xl">
@@ -106,7 +102,11 @@ export default function ResultsScreen({
             <RetroButton onClick={handleMainMenu} color="blue" size="md" className="mr-4">
               <ArrowLeft size={20} className="mr-2" /> MAIN MENU
             </RetroButton>
-            <RetroTitle size="md">BATTLE RESULTS</RetroTitle>
+            <img
+              src="/BATTLE_RESULTS.png"
+              alt="KEYBOARD KOMBAT"
+              className=" h-[80px] -mb-5 -mt-5 mx-20 pr-9 object-contain drop-shadow-[0_3px_3px_rgba(0,0,255,0.8)]"
+            />
           </div>
           <div className="text-yellow-400 font-bold text-xl">ROOM: {roomCode}</div>
         </div>
@@ -159,10 +159,10 @@ export default function ResultsScreen({
 
               <div className="flex justify-between items-center mt-6">
                 <span className="text-xl text-gray-300">Damage Dealt:</span>
-                <span className={`text-3xl font-bold ${playerValueStyle}`}>{playerStats.damageDealt} HP</span>
+                <span className={`text-3xl font-bold ${playerValueStyle}`}>{playerDamageDealt} HP</span>
               </div>
               <div className="w-full bg-gray-700 h-3 rounded-full">
-                <div className={`${playerBarStyle} h-3 rounded-full`} style={{ width: `${playerStats.damageDealt}%` }}></div>
+                <div className={`${playerBarStyle} h-3 rounded-full`} style={{ width: `${playerDamageDealt}%` }}></div>
               </div>
             </div>
           </div>
@@ -199,10 +199,10 @@ export default function ResultsScreen({
 
               <div className="flex justify-between items-center mt-6">
                 <span className="text-xl text-gray-300">Damage Dealt:</span>
-                <span className={`text-3xl font-bold ${opponentValueStyle}`}>{opponentStats.damageDealt} HP</span>
+                <span className={`text-3xl font-bold ${opponentValueStyle}`}>{opponentDamageDealt} HP</span>
               </div>
               <div className="w-full bg-gray-700 h-3 rounded-full">
-                <div className={`${opponentBarStyle} h-3 rounded-full`} style={{ width: `${opponentStats.damageDealt}%` }}></div>
+                <div className={`${opponentBarStyle} h-3 rounded-full`} style={{ width: `${opponentDamageDealt}%` }}></div>
               </div>
             </div>
           </div>

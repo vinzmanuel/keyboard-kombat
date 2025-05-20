@@ -25,7 +25,7 @@ export default function ModeSelector({
   ]
 
   const languages = [
-    { id: "JavaScript", label: "JavaScript" },
+    { id: "JS", label: "JS" },
     { id: "Python", label: "Python" },
     { id: "Java", label: "Java" },
     { id: "C", label: "C" },
