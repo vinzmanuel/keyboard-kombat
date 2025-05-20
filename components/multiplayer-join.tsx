@@ -91,7 +91,7 @@ export default function MultiplayerJoin() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white p-4 flex items-center justify-center">
+    <div className="min-h-screen text-white p-4 flex items-center justify-center">
       <RetroContainer className="w-full max-w-6xl">
         <div className="flex justify-between items-center mb-8">
           <div className="flex items-center">

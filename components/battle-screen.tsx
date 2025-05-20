@@ -520,7 +520,7 @@ export default function BattleScreen({ roomCode, textType, language = "JavaScrip
   // If there's a room error, show it
   if (roomError) {
     return (
-      <div className="min-h-screen bg-black text-white p-4 flex items-center justify-center">
+      <div className="min-h-screen text-white p-4 flex items-center justify-center">
         <RetroContainer className="w-full max-w-7xl">
           <div className="text-center">
             <div className="text-3xl font-bold text-red-500 mb-4">BATTLE ERROR</div>
@@ -575,7 +575,7 @@ export default function BattleScreen({ roomCode, textType, language = "JavaScrip
   if (!text) {
     console.log("Waiting for game text to load...");
     return (
-      <div className="min-h-screen bg-black text-white p-4 flex items-center justify-center">
+      <div className="min-h-screen  text-white p-4 flex items-center justify-center">
         <RetroContainer className="w-full max-w-7xl">
           <div className="text-center">
             <div className="text-3xl font-bold text-yellow-400 mb-4">LOADING BATTLE...</div>
@@ -592,7 +592,7 @@ export default function BattleScreen({ roomCode, textType, language = "JavaScrip
   }
 
   return (
-    <div className="min-h-screen bg-black text-white p-4 flex items-center justify-center">
+    <div className="min-h-screen  text-white p-4 flex items-center justify-center">
       <RetroContainer className="w-full max-w-7xl">
         <div className="flex justify-between items-center mb-6">
           <RetroTitle size="md">KEYBOARD KOMBAT</RetroTitle>
@@ -635,7 +635,7 @@ export default function BattleScreen({ roomCode, textType, language = "JavaScrip
         {/* Battle area */}
         <div className="relative">
           {!battleStarted && !battleEnded && (
-            <div className="absolute inset-0 flex items-center justify-center z-10 bg-black/80">
+            <div className="absolute inset-0 flex items-center justify-center z-10 ">
               <div className="text-center">
                 <div className="text-8xl font-bold text-yellow-400 mb-4">
                   {countdown > 0 ? countdown : "FIGHT!"}
@@ -649,7 +649,7 @@ export default function BattleScreen({ roomCode, textType, language = "JavaScrip
           )}
 
           {battleEnded && (
-            <div className="absolute inset-0 flex items-center justify-center z-10 bg-black/80">
+            <div className="absolute inset-0 flex items-center justify-center z-10">
               <div className="text-center">
                 <div className="text-6xl font-bold mb-6">
                   {winner === "player" ? (
@@ -1056,7 +1056,7 @@ function MultiplierTypingArea({
       >
         {/* Show countdown overlay if input is not enabled */}
         {mode === "interactive" && !inputEnabled && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black/80 z-20">
+          <div className="absolute inset-0 flex items-center justify-center  z-20">
             <span className="text-6xl text-yellow-400 font-bold animate-pulse">
               {countdown > 0 ? countdown : "GO!"}
             </span>

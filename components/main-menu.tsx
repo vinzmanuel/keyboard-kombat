@@ -73,7 +73,7 @@ export default function MainMenu() {
   // Prevent main menu flash: only render loading screen or main menu after hydration
   if (loading) {
     return (
-      <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black text-green-400 font-mono text-3xl animate-fadeIn">
+      <div className="fixed inset-0 z-50 flex flex-col items-center justify-center text-green-400 font-mono text-3xl animate-fadeIn">
         <div className="mb-8 flex flex-col items-center">
           <div className="mb-6">
             <span className="text-5xl tracking-widest animate-pulse">LOADING</span>
@@ -99,7 +99,7 @@ export default function MainMenu() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white p-4 flex items-center justify-center">
+    <div className="min-h-screen text-white p-4 flex items-center justify-center">
       <RetroContainer className="w-full max-w-4xl">
         <div className="text-center mb-10">
           <RetroTitle>KEYBOARD KOMBAT</RetroTitle>
