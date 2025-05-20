@@ -1,0 +1,112 @@
+{
+  "commonWords": [
+    "ability", "angle", "apple", "area", "army", "baby", "back", "ball", "band", "bank", "base", "beach", "bear", "beat", "bed", "bill", "bird", "birth", "block", "blood", "board", "boat", "body", "bone", "book", "boss", "bottom", "box", "boy", "brain", "bread", "break", "brown", "brush", "budget", "bug", "bus", "cake", "call", "camp", "card", "case", "cat", "chain", "chair", "chart", "check", "chest", "child", "church", "circle", "class", "clock", "cloud", "coach", "coast", "coat", "cold", "collar", "color", "comfort", "command", "comment", "company", "concert", "cook", "cool", "copy", "cost", "cotton", "count", "country", "cover", "crack", "credit", "crowd", "cup", "curve", "customer", "cut", "cycle", "damage", "dark", "data", "date", "day", "deal", "death", "debt", "decision", "deep", "degree", "design", "desk", "detail", "device", "diet", "dirt", "disk", "distance", "doctor", "dog", "doll", "door", "dot", "dream", "dress", "drink", "drop", "drug", "drum", "ear", "earth", "east", "edge", "effect", "egg", "engine", "error", "event", "example", "eye", "face", "fact", "family", "fan", "farm", "fat", "fear", "feed", "field", "fight", "film", "final", "finger", "fire", "fish", "flag", "flight", "floor", "flower", "fly", "food", "foot", "force", "forest", "form", "frame", "friend", "front", "fruit", "fuel", "game", "gap", "garage", "garden", "gas", "gate", "gear", "gift", "girl", "glass", "glove", "goal", "gold", "good", "government", "grain", "grass", "ground", "group", "growth", "guide", "gun", "hair", "hall", "hand", "handle", "hat", "head", "health", "heart", "heat", "height", "help", "hill", "history", "hobby", "hold", "hole", "holiday", "home", "hook", "hope", "horse", "hospital", "hotel", "hour", "house", "idea", "image", "impact", "income", "increase", "insect", "inside", "instance", "interest", "iron", "island", "issue", "item", "jacket", "job", "join", "joke", "judge", "jump", "juice", "key", "kid", "kill", "king", "knee", "knife", "lab", "lack", "ladder", "lake", "lamp", "land", "language", "law", "layer", "leader", "leaf", "learning", "leg", "letter", "level", "library", "lift", "light", "limit", "line", "link", "list", "load", "loan", "lock", "log", "look", "loss", "love", "machine", "mail", "man", "map", "market", "mask", "match", "material", "math", "matter", "meal", "measure", "meat", "media", "memory", "message", "metal", "method", "middle", "milk", "mind", "mirror", "mission", "model", "moment", "money", "month", "mood", "moon", "morning", "mother", "motor", "mountain", "mouse", "mouth", "move", "movie", "muscle", "music", "nail", "name", "nation", "neck", "needle", "nerve", "net", "news", "night", "noise", "north", "note", "object", "office", "oil", "operation", "opinion", "orange", "order", "organ", "owner", "page", "paint", "pair", "paper", "parent", "park", "part", "partner", "party", "pass", "past", "pattern", "peace", "pen", "people", "percent", "period", "person", "phone", "photo", "piano", "pick", "picture", "piece", "pig", "pin", "pipe", "place", "plane", "plant", "plastic", "plate", "player", "pocket", "poem", "point", "police", "pool", "population", "position", "potato", "power", "practice", "pressure", "price", "problem", "process", "product", "profit", "program", "promise", "proof", "property", "queen", "question", "rabbit", "race", "radio", "rain", "range", "rate", "ray", "reaction", "reading", "reason", "record", "refrigerator", "region", "register", "relation", "religion", "respect", "result", "rice", "ring", "river", "road", "rock", "roof", "room", "root", "rope", "rule", "run", "sail", "salt", "sand", "scale", "school", "science", "screen", "screw", "sea", "seat", "second", "secret", "seed", "sense", "sentence", "series", "service", "shadow", "shape", "sheep", "sheet", "shelf", "ship", "shoe", "shop", "shoulder", "sign", "signal", "silver", "sister", "size", "skill", "skin", "sky", "sleep", "slip", "smoke", "snow", "soap", "sock", "soft", "soil", "song", "sound", "soup", "south", "space", "spade", "speak", "speech", "speed", "spell", "spend", "sphere", "spider", "spoon", "sport", "spring", "square", "staff", "stage", "stair", "stamp", "star", "start", "state", "station", "steam", "steel", "step", "stick", "stone", "store", "storm", "story", "stove", "stream", "street", "stretch", "string", "structure", "student", "sugar", "summer", "sun", "support", "surface", "surprise", "swim", "system", "table", "tail", "tank", "taste", "tax", "team", "tear", "teeth", "test", "text", "thing", "thought", "thread", "throat", "thumb", "ticket", "tie", "time", "title", "toe", "tomato", "tooth", "top", "touch", "town", "toy", "track", "trade", "train", "tree", "trick", "trip", "truck", "truth", "tube", "turn", "twig", "uncle", "unit", "use", "vacation", "value", "van", "vegetable", "verse", "vessel", "video", "view", "voice", "volume", "vote", "wage", "walk", "wall", "war", "warm", "wash", "waste", "watch", "water", "wave", "way", "wealth", "weather", "web", "week", "weight", "wheel", "while", "whip", "whistle", "white", "whole", "window", "wing", "winter", "wire", "wish", "woman", "wood", "wool", "word", "work", "world", "wound", "writer", "yard", "year", "yellow", "youth", "zero", "zone"
+  ],
+  "punctuationPhrases": [
+    "She walked into the room—quiet, confident, unstoppable.",
+    "Have you ever seen the sky turn green before a storm?",
+    "“I'm not sure,” he whispered, staring into the void.",
+    "Despite everything, they knew they'd try again tomorrow.",
+    "It wasn’t luck; it was preparation meeting opportunity.",
+    "Please, don’t press that button—it’s not a toy!",
+    "If it works, why change it? That’s the real question.",
+    "Her ideas were bold, her execution even bolder.",
+    "You mustn’t forget the password... or all is lost.",
+    "What's the plan? We can't just sit here forever!",
+    "He paused—heart racing, mind spinning—at the edge.",
+    "Is it courage, or just stubbornness, that drives her?",
+    "“Keep going,” she said, brushing off the doubt.",
+    "The clock ticked louder, urging them to decide now!",
+    "No regrets; only lessons learned from past mistakes.",
+    "She smiled, knowing the secret—nobody else did.",
+    "Why hesitate? The moment won’t wait for anyone!",
+    "His voice trembled... the truth was too heavy.",
+    "They ran, breathless, as the sirens screamed behind.",
+    "Hope isn’t enough; action makes the difference.",
+    "“Trust me,” she urged, eyes wide with certainty.",
+    "The stars blinked—silent witnesses to their vows.",
+    "What’s worse than failure? Never even trying.",
+    "He laughed, loud and free, defying the odds.",
+    "Time’s running out... will you make your move?",
+    "She built it alone, brick by painstaking brick.",
+    "Doubt crept in, but he pushed it away—fast.",
+    "Is this the end, or just a new beginning?",
+    "“I’ll be back,” he promised, voice breaking.",
+    "The wind howled; they pressed on regardless.",
+    "Mistakes don’t define you—choices do.",
+    "Who’s out there? The shadows moved again.",
+    "Her plan was risky, yet impossible to ignore.",
+    "No turning back now—the bridge is gone!",
+    "He stood tall, unshaken, against the storm."
+  ],
+  "complexSnippets": {
+    "JavaScript": [
+      "class FFT {\n static *bitReverse(n) {\n  let j = 0;\n  for (let i = 0; i < n; i++) {\n   j = (j << 1) | (i & 1);\n   yield j >>> 0;\n  }\n }",
+      "class Matrix {\n static mul(a, b) {\n  return a.map((_, i) => \n   b[0].map((_, j) =>\n    a[i].reduce((s, _, k) => \n     s + a[i][k] * b[k][j], 0)));\n }",
+      "class Simplex {\n pivot(col, row) {\n  const p = this.table[row][col];\n  this.table[row] = this.table[row].map(\n   x => x / p);\n }",
+      "class Zobrist {\n constructor(size) {\n  this.keys = Array(size).fill(0)\n   .map(_ => Array(size)\n   .map(_ => (Math.random() * \n    0xFFFFFFFF) >>> 0);\n }",
+      "class Dijkstra {\n findPath(graph, start) {\n  let dist = Array(graph.length).fill(Infinity);\n  dist[start] = 0;\n  let pq = [[0, start]];\n  while (pq.length) {\n   let [d, u] = pq.shift();\n   for (let v in graph[u]) {\n    if (d + graph[u][v] < dist[v]) {\n     dist[v] = d + graph[u][v];\n     pq.push([dist[v], v]);\n    }\n   }\n  }\n  return dist;\n }",
+      "function factorial(n) {\n let result = 1;\n for (let i = 1; i <= n; i++) {\n  result *= i;\n }\n return result;\n}",
+      "function isPrime(num) {\n if (num < 2) return false;\n for (let i = 2; i <= Math.sqrt(num); i++) {\n  if (num % i === 0) return false;\n }\n return true;\n}",
+      "function reverseArray(arr) {\n let result = [];\n for (let i = arr.length - 1; i >= 0; i--) {\n  result.push(arr[i]);\n }\n return result;\n}",
+      "function sumArray(arr) {\n let sum = 0;\n for (let i = 0; i < arr.length; i++) {\n  sum += arr[i];\n }\n return sum;\n}",
+      "function maxInArray(arr) {\n let max = arr[0];\n for (let i = 1; i < arr.length; i++) {\n  if (arr[i] > max) max = arr[i];\n }\n return max;\n}"
+
+    ],
+    "Python": [
+      "def mandelbrot(c, max_iter):\n z = 0+0j\n for n in range(max_iter):\n  if abs(z) > 2:\n   return n\n  z = z*z + c\n return max_iter",
+      "def svd(A):\n U,s,V = np.linalg.svd(A)\n S = np.zeros(A.shape)\n np.fill_diagonal(S,s)\n return U,S,V.T",
+      "def monte_carlo(f, a, b, n):\n xs = np.random.uniform(a,b,n)\n return (b-a)*np.mean(f(xs))",
+      "def jacobi(A, b, tol=1e-10):\n D = np.diag(np.diag(A))\n R = A - D\n x = np.zeros_like(b)\n while True:\n  x_new = (b - R@x)/np.diag(D)\n  if np.linalg.norm(x_new-x) < tol:\n   return x_new\n  x = x_new",
+      "def factorial(n):\n result = 1\n for i in range(1, n + 1):\n  result *= i\n return result",
+      "def is_palindrome(s):\n s = s.lower().replace(' ', '')\n return s == s[::-1]",
+      "def count_vowels(s):\n vowels = 'aeiou'\n count = 0\n for char in s.lower():\n  if char in vowels:\n   count += 1\n return count",
+      "def fibonacci(n):\n a, b = 0, 1\n for _ in range(n):\n  a, b = b, a + b\n return a",
+      "def remove_duplicates(lst):\n result = []\n for x in lst:\n  if x not in result:\n   result.append(x)\n return result"
+    ],
+    "Java": [
+      "public class FFT {\n public static Complex[] fft(Complex[] x) {\n  int n = x.length;\n  if (n == 1) return x;\n  Complex[] even = new Complex[n/2];\n  Complex[] odd = new Complex[n/2];\n  for (int i = 0; i < n/2; i++) {\n   even[i] = x[2*i];\n   odd[i] = x[2*i+1];\n  }\n  return merge(fft(even), fft(odd));\n }",
+      "public class KalmanFilter {\n private Matrix P; // Covariance\n private Matrix Q; // Process noise\n private Matrix R; // Measurement noise\n public void predict() {\n  P = F.mult(P).mult(F.transpose()).plus(Q);\n }",
+      "public class Quaternion {\n private double w, x, y, z;\n public Quaternion multiply(Quaternion q) {\n  return new Quaternion(\n   w*q.w - x*q.x - y*q.y - z*q.z,\n   w*q.x + x*q.w + y*q.z - z*q.y,\n   w*q.y - x*q.z + y*q.w + z*q.x,\n   w*q.z + x*q.y - y*q.x + z*q.w);\n }",
+      "public class RungeKutta {\n public static double solve(\n  Function<Double,Double> f,\n  double y0, double t0, double t1, double h) {\n  double y = y0;\n  for (double t = t0; t < t1; t += h) {\n   double k1 = h * f.apply(y);\n   double k2 = h * f.apply(y + k1/2);\n   double k3 = h * f.apply(y + k2/2);\n   double k4 = h * f.apply(y + k3);\n   y += (k1 + 2*k2 + 2*k3 + k4)/6;\n  }\n  return y;\n }",
+      "public class MathUtils {\n public static int factorial(int n) {\n  int result = 1;\n  for (int i = 1; i <= n; i++) {\n   result *= i;\n  }\n  return result;\n }",
+      "public class StringUtils {\n public static boolean isPalindrome(String s) {\n  s = s.toLowerCase().replaceAll(\" \", \"\");\n  for (int i = 0; i < s.length() / 2; i++) {\n   if (s.charAt(i) != s.charAt(s.length() - 1 - i)) return false;\n  }\n  return true;\n }",
+      "public class ArrayUtils {\n public static int sumArray(int[] arr) {\n  int sum = 0;\n  for (int i = 0; i < arr.length; i++) {\n   sum += arr[i];\n  }\n  return sum;\n }",
+      "public class NumberUtils {\n public static boolean isPrime(int num) {\n  if (num < 2) return false;\n  for (int i = 2; i <= Math.sqrt(num); i++) {\n   if (num % i == 0) return false;\n  }\n  return true;\n }",
+      "public class ListUtils {\n public static int[] reverseArray(int[] arr) {\n  int[] result = new int[arr.length];\n  for (int i = 0; i < arr.length; i++) {\n   result[i] = arr[arr.length - 1 - i];\n  }\n  return result;\n }"
+    ],
+    "C++": [
+      "template<typename T>\nMatrix<T> gauss_jordan(Matrix<T> A) {\n int n = A.rows();\n Matrix<T> inv = Matrix<T>::identity(n);\n for (int i = 0; i < n; ++i) {\n  T pivot = A[i][i];\n  for (int j = 0; j < n; ++j) {\n   A[i][j] /= pivot;\n   inv[i][j] /= pivot;\n  }\n  for (int k = 0; k < n; ++k) {\n   if (k != i) {\n    T factor = A[k][i];\n    for (int j = 0; j < n; ++j) {\n     A[k][j] -= factor * A[i][j];\n     inv[k][j] -= factor * inv[i][j];\n    }\n   }\n  }\n }\n return inv;\n}",
+      "template<typename T>\nT newton_raphson(T x0, function<T(T)> f, \n function<T(T)> df, double tol) {\n T x = x0;\n while (abs(f(x)) > tol) {\n  x = x - f(x)/df(x);\n }\n return x;\n}",
+      "template<typename T>\nvoid fft(vector<complex<T>>& x) {\n const int n = x.size();\n if (n <= 1) return;\n vector<complex<T>> even(n/2), odd(n/2);\n for (int i = 0; i < n/2; ++i) {\n  even[i] = x[2*i];\n  odd[i] = x[2*i+1];\n }\n fft(even);\n fft(odd);\n for (int k = 0; k < n/2; ++k) {\n  complex<T> t = polar(1.0, -2*M_PI*k/n)*odd[k];\n  x[k] = even[k] + t;\n  x[k+n/2] = even[k] - t;\n }\n}",
+      "template<typename T>\nMatrix<T> cholesky(Matrix<T> A) {\n int n = A.rows();\n Matrix<T> L(n,n);\n for (int i = 0; i < n; ++i) {\n  for (int j = 0; j <= i; ++j) {\n   T sum = 0;\n   for (int k = 0; k < j; ++k)\n    sum += L[i][k] * L[j][k];\n   L[i][j] = (i == j) ?\n    sqrt(A[i][i] - sum) :\n    (1.0/L[j][j]*(A[i][j]-sum));\n  }\n }\n return L;\n}",
+      "int factorial(int n) {\n int result = 1;\n for (int i = 1; i <= n; ++i) {\n  result *= i;\n }\n return result;\n}",
+      "bool isPrime(int num) {\n if (num < 2) return false;\n for (int i = 2; i <= sqrt(num); ++i) {\n  if (num % i == 0) return false;\n }\n return true;\n}",
+      "vector<int> reverseArray(vector<int> arr) {\n vector<int> result;\n for (int i = arr.size() - 1; i >= 0; --i) {\n  result.push_back(arr[i]);\n }\n return result;\n}",
+      "int sumArray(vector<int> arr) {\n int sum = 0;\n for (int i = 0; i < arr.size(); ++i) {\n  sum += arr[i];\n }\n return sum;\n}",
+      "int maxInArray(vector<int> arr) {\n int max = arr[0];\n for (int i = 1; i < arr.size(); ++i) {\n  if (arr[i] > max) max = arr[i];\n }\n return max;\n}"
+    ],
+    "C#": [
+      "public static class FFT\n{\n public static Complex[] Transform(Complex[] x)\n {\n  int n = x.Length;\n  if (n == 1) return x;\n  Complex[] even = new Complex[n/2];\n  Complex[] odd = new Complex[n/2];\n  for (int i=0; i<n/2; i++) {\n   even[i] = x[2*i];\n   odd[i] = x[2*i+1];\n  }\n  return Merge(Transform(even), Transform(odd));\n }",
+      "public class NeuralNetwork\n{\n private Matrix weights;\n public Matrix Forward(Matrix input) {\n  Matrix z = input.Dot(weights);\n  return z.Map(x => 1/(1+Math.Exp(-x)));\n }",
+      "public class RayTracer\n{\n public Vector3 Trace(Ray ray, Scene scene) {\n  var hit = scene.Intersect(ray);\n  if (hit == null) return scene.Background;\n  return Shade(hit, scene);\n }",
+      "public class Crypto\n{\n public static byte[] AESEncrypt(byte[] data, byte[] key) {\n  using (var aes = Aes.Create()) {\n   aes.Key = key;\n   using (var ms = new MemoryStream()) {\n    using (var cs = new CryptoStream(ms, \n     aes.CreateEncryptor(), CryptoStreamMode.Write)) {\n     cs.Write(data, 0, data.Length);\n     return ms.ToArray();\n    }\n   }\n  }\n }",
+      "public static class MathUtils\n{\n public static int Factorial(int n)\n {\n  int result = 1;\n  for (int i = 1; i <= n; i++)\n   result *= i;\n  return result;\n }\n}",
+      "public static class StringUtils\n{\n public static bool IsPalindrome(string s)\n {\n  s = s.ToLower().Replace(\" \", \"\");\n  for (int i = 0; i < s.Length / 2; i++)\n   if (s[i] != s[s.Length - 1 - i]) return false;\n  return true;\n }\n}",
+      "public static class ArrayUtils\n{\n public static int SumArray(int[] arr)\n {\n  int sum = 0;\n  for (int i = 0; i < arr.Length; i++)\n   sum += arr[i];\n  return sum;\n }\n}",
+      "public static class NumberUtils\n{\n public static bool IsPrime(int num)\n {\n  if (num < 2) return false;\n  for (int i = 2; i <= Math.Sqrt(num); i++)\n   if (num % i == 0) return false;\n  return true;\n }\n}",
+      "public static class ListUtils\n{\n public static int[] ReverseArray(int[] arr)\n {\n  int[] result = new int[arr.Length];\n  for (int i = 0; i < arr.Length; i++)\n   result[i] = arr[arr.Length - 1 - i];\n  return result;\n }\n}"
+    ],
+    "C": [
+      "void fft(complex double *x, int n) {\n if (n <= 1) return;\n complex double even[n/2], odd[n/2];\n for (int i = 0; i < n/2; i++) {\n  even[i] = x[2*i];\n  odd[i] = x[2*i+1];\n }\n fft(even, n/2);\n fft(odd, n/2);\n for (int k = 0; k < n/2; k++) {\n  complex double t = cexp(-2*I*M_PI*k/n)*odd[k];\n  x[k] = even[k] + t;\n  x[k+n/2] = even[k] - t;\n }\n}",
+      "double monte_carlo(double (*f)(double), \n double a, double b, int n) {\n double sum = 0;\n for (int i = 0; i < n; i++) {\n  double x = a + (b-a)*rand()/RAND_MAX;\n  sum += f(x);\n }\n return (b-a)*sum/n;\n}",
+      "void jacobi(double **A, double *b, \n double *x, int n, double tol) {\n double *x_new = malloc(n*sizeof(double));\n while (1) {\n  for (int i = 0; i < n; i++) {\n   double sigma = 0;\n   for (int j = 0; j < n; j++)\n    if (j != i) sigma += A[i][j]*x[j];\n   x_new[i] = (b[i]-sigma)/A[i][i];\n  }\n  if (norm_diff(x,x_new,n) < tol) break;\n  memcpy(x,x_new,n*sizeof(double));\n }\n free(x_new);\n}",
+      "void kalman_predict(double *x, double **P, \n double **F, double **Q) {\n double *Fx = mat_vec(F,x);\n memcpy(x,Fx,sizeof(Fx));\n double **FP = mat_mul(F,P);\n double **FPT = mat_trans(FP);\n double **FPF = mat_mul(FP,FPT);\n mat_add_inplace(FPF,Q);\n memcpy(P,FPF,sizeof(FPF));\n}",
+      "int factorial(int n) {\n int result = 1;\n for (int i = 1; i <= n; i++) {\n  result *= i;\n }\n return result;\n}",
+      "int is_prime(int num) {\n if (num < 2) return 0;\n for (int i = 2; i <= sqrt(num); i++) {\n  if (num % i == 0) return 0;\n }\n return 1;\n}",
+      "void reverse_array(int *arr, int n) {\n for (int i = 0; i < n / 2; i++) {\n  int temp = arr[i];\n  arr[i] = arr[n - 1 - i];\n  arr[n - 1 - i] = temp;\n }\n}",
+      "int sum_array(int *arr, int n) {\n int sum = 0;\n for (int i = 0; i < n; i++) {\n  sum += arr[i];\n }\n return sum;\n}",
+      "int max_in_array(int *arr, int n) {\n int max = arr[0];\n for (int i = 1; i < n; i++) {\n  if (arr[i] > max) max = arr[i];\n }\n return max;\n}"
+    ]
+  }
+}

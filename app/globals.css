@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+  --primary: #ff5555;
+  --secondary: #55ff55;
+  --accent: #5555ff;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: monospace;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-y: scroll; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Animation for modal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+/* Retro scanlines effect */
+.scanlines {
+  position: relative;
+}
+
+.scanlines::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.1) 51%);
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* CRT flicker animation */
+@keyframes flicker {
+  0% {
+    opacity: 0.97;
+  }
+  5% {
+    opacity: 0.9;
+  }
+  10% {
+    opacity: 0.97;
+  }
+  15% {
+    opacity: 0.92;
+  }
+  20% {
+    opacity: 0.97;
+  }
+  50% {
+    opacity: 0.95;
+  }
+  80% {
+    opacity: 0.97;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.97;
+  }
+}
+
+.crt-flicker {
+  animation: flicker 5s infinite;
+}
