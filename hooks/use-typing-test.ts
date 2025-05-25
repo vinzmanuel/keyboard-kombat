@@ -151,8 +151,19 @@ export function useTypingTest({ text, enabled, duration }: TypingTestOptions): T
 
       // Only check new characters
       for (let i = prevLength; i < value.length; i++) {
-        if (i < currentText.length && value[i] !== currentText[i]) {
-          newIncorrectChars.add(i)
+        if (i < currentText.length) {
+          const expectedChar = currentText[i];
+          const typedChar = value[i];
+          // Ignore mismatch if expected is '\n' and typed is ' ' (space), or vice versa
+          if (
+            (expectedChar === '\n' && typedChar === ' ') ||
+            (expectedChar === ' ' && typedChar === '\n')
+          ) {
+            continue;
+          }
+          if (typedChar !== expectedChar) {
+            newIncorrectChars.add(i);
+          }
         }
       }
 
