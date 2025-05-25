@@ -149,6 +149,7 @@ export default function MainMenu() {
         <p className="text-xl text-purple-200">A retro-styled typing battle game</p>
         <p className="text-xl text-purple-200 mt-3">© 2025 LOV STUDIOS</p>
         <p className="text-xl text-purple-200 mt-3">LIMOSNERO · OMBROSA · VALENZUELA</p>
+        <p className="text-xl text-purple-200 mt-3">SUBMITTED TO: PROF. KISELLE CAMPECIÑO</p>
       </div>
     )}
 

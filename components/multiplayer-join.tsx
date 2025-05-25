@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { useRouter } from "next/navigation"
 import { ArrowLeft, Users } from "lucide-react"
 import RetroButton from "./ui/retro-button"
@@ -15,6 +15,13 @@ export default function MultiplayerJoin() {
   const [error, setError] = useState("")
   const [joining, setJoining] = useState(false)
   const [playerName, setPlayerName] = useState("Player 2") // Default name for joining player
+  const [hasJoined, setHasJoined] = useState(false); // Track if user has joined
+  const hasJoinedRef = useRef(false); // Ref to track latest hasJoined
+
+  // Keep ref in sync with state
+  useEffect(() => {
+    hasJoinedRef.current = hasJoined;
+  }, [hasJoined]);
 
   // Setup socket event listeners
   useEffect(() => {
@@ -23,6 +30,7 @@ export default function MultiplayerJoin() {
     // Handle successful room join
     const onRoomJoined = ({ roomCode, settings }: { roomCode: string; settings: any }) => {
       setJoining(false)
+      setHasJoined(true)
       console.log(`Joined room ${roomCode} with settings:`, settings)
       
       // Save the player name for future use
@@ -35,6 +43,7 @@ export default function MultiplayerJoin() {
 
     // Handle room errors
     const onRoomError = ({ error }: { error: string }) => {
+      if (hasJoinedRef.current) return; // Ignore errors after join
       console.error("Room error when joining:", error)
       setError(error)
       setJoining(false)
@@ -49,7 +58,7 @@ export default function MultiplayerJoin() {
       socket.off('roomJoined', onRoomJoined)
       socket.off('roomError', onRoomError)
     }
-  }, [socket, router])
+  }, [socket, router, hasJoined])
 
   const handleJoinRoom = () => {
     if (!socket) {
@@ -179,4 +188,4 @@ export default function MultiplayerJoin() {
       </RetroContainer>
     </div>
   )
-} 
+}

@@ -32,6 +32,7 @@ export default function BattleScreen({ roomCode, textType, language = "JavaScrip
   const [roomError, setRoomError] = useState<string | null>(null)
   const [showGiveUpModal, setShowGiveUpModal] = useState(false)
   const [opponentGaveUp, setOpponentGaveUp] = useState(false)
+  const [hasLoadedRoom, setHasLoadedRoom] = useState(false); // Track if room is loaded successfully
   const loadTimerRef = useRef<NodeJS.Timeout | null>(null)
 
   // Get socket directly
@@ -223,6 +224,7 @@ export default function BattleScreen({ roomCode, textType, language = "JavaScrip
         }, 500);
         
         setPageLoaded(true);
+        setHasLoadedRoom(true); // Mark as loaded after first load
         
         // Just one retry after a delay if needed
         const retryTimeout = setTimeout(() => {
@@ -310,6 +312,8 @@ export default function BattleScreen({ roomCode, textType, language = "JavaScrip
     
     // Handle room error events
     const onRoomError = ({ error }: { error: string }) => {
+      // Ignore room errors after successful load
+      if (hasLoadedRoom) return;
       console.error("Room error:", error);
       setRoomError(error);
       
@@ -364,7 +368,7 @@ export default function BattleScreen({ roomCode, textType, language = "JavaScrip
       socket.off('playerGaveUp', onPlayerGaveUp);
       socket.off('gameOver', onGameOver);
     };
-  }, [socket, roomCode, battleStarted]);
+  }, [socket, roomCode, battleStarted, hasLoadedRoom]);
 
   // Handle player typing progress
   const handlePlayerProgress = useCallback(

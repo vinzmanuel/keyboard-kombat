@@ -31,7 +31,7 @@ const OptimizedTextDisplay = memo(function OptimizedTextDisplay({
     return (
       <div
         ref={containerRef}
-        className="font-mono text-3xl leading-relaxed whitespace-pre-wrap h-[250px] overflow-y-auto scrollbar-hide relative bg-gray-900 p-6 rounded-md border border-gray-700"
+        className="font-mono text-3xl leading-relaxed whitespace-pre-wrap h-[250px] w-[1040px] overflow-y-auto scrollbar-hide relative bg-gray-900 p-6 rounded-md border border-gray-700"
       >
         {/* Characters before cursor */}
         <span className="text-green-500">

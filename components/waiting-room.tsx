@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ArrowLeft, Loader2 } from "lucide-react";
 import RetroButton from "./ui/retro-button";
@@ -25,6 +25,8 @@ export default function WaitingRoom({ roomCode, textType, language = "JavaScript
   const [isCreator, setIsCreator] = useState(false);
   const [allReady, setAllReady] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [hasJoined, setHasJoined] = useState(false); // Track if user has joined
+  const hasJoinedRef = useRef(false); // Ref to track latest hasJoined
 
   // --- Rematch logic: parse query params ---
   const rematch = searchParams?.get("rematch") === "1";
@@ -41,6 +43,11 @@ export default function WaitingRoom({ roomCode, textType, language = "JavaScript
       clearInterval(interval);
     };
   }, []);
+
+  // Keep ref in sync with state
+  useEffect(() => {
+    hasJoinedRef.current = hasJoined;
+  }, [hasJoined]);
 
   // Setup socket connection and event listeners
   useEffect(() => {
@@ -132,6 +139,12 @@ export default function WaitingRoom({ roomCode, textType, language = "JavaScript
         setError("Failed to start game. Please try again.");
       }
     };
+    // Handle successful room join
+    const onRoomJoined = ({ roomCode, settings }: { roomCode: string; settings: any }) => {
+      setHasJoined(true);
+      setError(null);
+    };
+    // Handle room errors
     const onRoomError = ({ error: errorMsg }: { error: string }) => {
       console.error("Room error:", errorMsg);
       setError(errorMsg);
@@ -148,6 +161,7 @@ export default function WaitingRoom({ roomCode, textType, language = "JavaScript
     currentSocket.on('playerStatusUpdate', onPlayerStatusUpdate);
     currentSocket.on('gameStart', onGameStart);
     currentSocket.on('roomError', onRoomError);
+    currentSocket.on('roomJoined', onRoomJoined);
     console.log("Current socket ID:", currentSocket.id);
     return () => {
       console.log("Cleaning up socket listeners");
@@ -157,6 +171,7 @@ export default function WaitingRoom({ roomCode, textType, language = "JavaScript
       currentSocket.off('gameStart', onGameStart);
       currentSocket.off('roomError', onRoomError);
       currentSocket.off('roomCreated');
+      currentSocket.off('roomJoined', onRoomJoined);
     };
   }, [socket, roomCode, router, textType, language, error, opponentJoined, rematch, initiator]);
 
